@@ -25,9 +25,9 @@
             background: linear-gradient(135deg, #9370DB, #8A2BE2);
             color: var(--light-color);
             min-height: 100vh;
-            overflow: hidden; /* Prevent scrolling */
             display: flex;
             flex-direction: column;
+            overflow: hidden; /* Prevent scrolling by default */
         }
 
         .container {
@@ -43,7 +43,7 @@
 
         nav {
             display: flex;
-            justify-content: flex-start; /* Move logo to left */
+            justify-content: flex-start;
             align-items: center;
             position: relative;
         }
@@ -100,10 +100,9 @@
             justify-content: center;
             padding: 20px 0;
             flex: 1;
-            position: relative; /* For positioning social icons relative to this */
+            position: relative;
         }
 
-        /* Combined character and download button container for animation */
         .character-download-group {
             display: flex;
             flex-direction: column;
@@ -117,7 +116,7 @@
         }
 
         .character-img {
-            max-width: 60%; /* Reduced size to fit screen */
+            max-width: 60%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -231,9 +230,9 @@
         .social-icons {
             position: absolute;
             right: 30px;
-            bottom: 60px; /* Position above the footer */
+            bottom: 60px;
             display: flex;
-            flex-direction: column; /* Align vertically */
+            flex-direction: column;
             gap: 15px;
         }
 
@@ -306,12 +305,21 @@
         /* Responsive design */
         @media screen and (max-width: 768px) {
             body {
-                overflow-y: auto; /* Allow vertical scrolling on mobile if needed */
+                overflow: hidden; /* Prevent scrolling on mobile */
+            }
+
+            .responsive_cont {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                height: 100vh; /* Full viewport height */
+                padding: 20px 0;
             }
 
             .main-content {
                 padding: 10px 0;
-                min-height: auto; /* Allow content to adjust */
+                flex: 1;
             }
 
             .character-download-group {
@@ -320,15 +328,15 @@
             }
 
             .character-img {
-                max-width: 80%; /* Center and enlarge slightly for mobile */
+                max-width: 80%;
                 margin: 0 auto;
                 display: block;
             }
 
             .download-btn {
-                margin-top: 0px; /* Space between image and download button */
-                margin-right: -20px; /* Remove negative margin */
-                width: 60%; /* Ensure it fits mobile screen */
+                margin-top: 20px;
+                margin-right: 0;
+                width: 60%;
                 justify-content: center;
             }
 
@@ -340,20 +348,20 @@
             }
 
             .social-icons {
-                position: static; /* Move below image */
-                flex-direction: row; /* Horizontal for mobile */
+                position: static;
+                flex-direction: row;
                 justify-content: center;
-                margin: 20px 0; /* Space above and below social icons */
+                margin: 20px 0;
                 width: 100%;
                 bottom: auto;
             }
 
             .social-icon {
-                margin: 0 5px; /* Space between icons */
+                margin: 0 5px;
             }
 
             footer {
-                margin-top: 20px; /* Space between social icons and footer */
+                margin-top: 0;
                 width: 100%;
             }
 
@@ -365,14 +373,6 @@
             .nav-links {
                 position: static;
                 margin-top: 0;
-            }
-
-            .responsive_cont {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                flex-direction: column;
-                height: 70vh;
             }
         }
 
@@ -390,7 +390,7 @@
             }
 
             .character-img {
-                max-width: 90%; /* Larger on very small screens */
+                max-width: 90%;
             }
 
             .download-btn {
@@ -415,9 +415,8 @@
                 left: -220px;
             }
 
-            /* Ensure nav-links are visible and hamburger is hidden in desktop view */
             .nav-links {
-                display: flex !important; /* Force display in desktop */
+                display: flex !important;
                 position: absolute;
                 right: 20px;
                 flex-direction: row;
@@ -428,7 +427,7 @@
             }
 
             .hamburger {
-                display: none !important; /* Hide hamburger in desktop */
+                display: none !important;
             }
         }
     </style>
